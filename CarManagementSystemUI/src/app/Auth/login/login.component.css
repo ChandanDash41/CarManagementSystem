@@ -1,0 +1,33 @@
+.login-container {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  h2 {
+    text-align: center;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .form-control {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+  }
+  
+  .btn {
+    width: 100%;
+    color: white;
+    background-color: blue;
+  }
+  
+  .alert-danger {
+    text-align: center;
+  }
+  

@@ -1,0 +1,38 @@
+<div class="container">
+    <h2>Create Sales Data</h2>
+    <form (ngSubmit)="createSalesData()">
+      <div class="form-group">
+        <label for="salesmanId">Salesman</label>
+        <select class="form-control" id="salesmanId" [(ngModel)]="salesmanId" name="salesmanId" required>
+          <option *ngFor="let salesman of salesmen" [value]="salesman.id">{{ salesman.name }}</option>
+        </select>
+      </div>
+  
+      <div class="form-group">
+        <label for="brandId">Brand</label>
+        <select class="form-control" id="brandId" [(ngModel)]="brandId" name="brandId" required>
+          <option *ngFor="let brand of brands" [value]="brand.id">{{ brand.name }}</option>
+        </select>
+      </div>
+  
+      <div class="form-group">
+        <label for="classId">Class</label>
+        <select class="form-control" id="classId" [(ngModel)]="classId" name="classId" required>
+          <option *ngFor="let classObj of classes" [value]="classObj.id">{{ classObj.name }}</option>
+        </select>
+      </div>
+  
+      <div class="form-group">
+        <label for="numberOfCarsSold">Number of Cars Sold</label>
+        <input type="number" class="form-control" id="numberOfCarsSold" [(ngModel)]="numberOfCarsSold" name="numberOfCarsSold" required />
+      </div>
+  
+      <div class="form-group">
+        <label for="modelPrice">Model Price</label>
+        <input type="number" class="form-control" id="modelPrice" [(ngModel)]="modelPrice" name="modelPrice" required />
+      </div>
+  
+      <button type="submit" class="btn btn-primary">Create Sales Data</button>
+    </form>
+  </div>
+  

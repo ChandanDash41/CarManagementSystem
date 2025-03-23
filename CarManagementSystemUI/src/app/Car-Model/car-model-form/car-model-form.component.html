@@ -1,0 +1,77 @@
+<div class="container">
+  <h2>Add Car Model</h2>
+
+  <form [formGroup]="carModelForm" (ngSubmit)="onSubmit()">
+
+    <label for="brand">Brand:</label>
+    <select id="brand" formControlName="brand" required>
+      <option value="" disabled>Select Brand</option>
+      <option *ngFor="let brand of brands" [value]="brand.name">{{ brand.name }}</option>
+    </select>
+    <div *ngIf="carModelForm.get('brand')?.invalid && carModelForm.get('brand')?.touched">
+      Brand is required.
+    </div>
+
+    <label for="class">Class:</label>
+    <select id="class" formControlName="class" required>
+      <option value="" disabled>Select Class</option>
+      <option *ngFor="let cls of classes" [value]="cls.name">{{ cls.name }}</option>
+    </select>
+    <div *ngIf="carModelForm.get('class')?.invalid && carModelForm.get('class')?.touched">
+      Class is required.
+    </div>
+
+    <label for="modelName">Model Name:</label>
+    <input type="text" id="modelName" formControlName="modelName" required>
+    <div *ngIf="carModelForm.get('modelName')?.invalid && carModelForm.get('modelName')?.touched">
+      Model Name is required.
+    </div>
+
+    <label for="modelCode">Model Code (10 Alphanumeric):</label>
+    <input type="text" id="modelCode" formControlName="modelCode" maxlength="10" required>
+    <div *ngIf="carModelForm.get('modelCode')?.invalid && carModelForm.get('modelCode')?.touched">
+      Model Code must be exactly 10 alphanumeric characters.
+    </div>
+
+    <label for="description">Description:</label>
+    <textarea id="description" formControlName="description"></textarea>
+    <div *ngIf="carModelForm.get('description')?.invalid && carModelForm.get('description')?.touched">
+      Description is required.
+    </div>
+
+    <label for="features">Features:</label>
+    <textarea id="features" formControlName="features"></textarea>
+    <div *ngIf="carModelForm.get('features')?.invalid && carModelForm.get('features')?.touched">
+      Features are required.
+    </div>
+
+    <label for="price">Price:</label>
+    <input type="number" id="price" formControlName="price" required>
+    <div *ngIf="carModelForm.get('price')?.invalid && carModelForm.get('price')?.touched">
+      Price is required.
+    </div>
+
+    <label for="dateOfManufacturing">Date of Manufacturing:</label>
+    <input type="date" id="dateOfManufacturing" formControlName="dateOfManufacturing" required>
+    <div *ngIf="carModelForm.get('dateOfManufacturing')?.invalid && carModelForm.get('dateOfManufacturing')?.touched">
+      Date of Manufacturing is required.
+    </div>
+
+    <label for="isActive">Active:</label>
+    <input type="checkbox" id="isActive" formControlName="isActive">
+
+    <label for="sortOrder">Sort Order:</label>
+    <input type="number" id="sortOrder" formControlName="sortOrder" required>
+    <div *ngIf="carModelForm.get('sortOrder')?.invalid && carModelForm.get('sortOrder')?.touched">
+      Sort Order is required.
+    </div>
+
+    <label for="images">Upload Images:</label>
+    <input type="file" id="images" formControlName="images" (change)="onFileSelected($event)" multiple accept="image/*">
+    <div *ngIf="imageError">
+      {{ imageError }}
+    </div>
+
+    <button type="submit" [disabled]="carModelForm.invalid">Add Car Model</button>
+  </form>
+</div>

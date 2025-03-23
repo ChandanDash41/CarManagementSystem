@@ -1,0 +1,44 @@
+<div class="container">
+    <h2>Sales Table for Month</h2>
+    <table class="sales-table">
+      <thead>
+        <tr>
+          <th>Salesman</th>
+          <th>Class</th>
+          <th>Number of Cars sold for Audi</th>
+          <th>Number of Cars sold for Jaguar</th>
+          <th>Number of Cars sold for Land Rover</th>
+          <th>Number of Cars sold for Renault</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let sale of salesForMonth">
+          <td>{{ sale.salesman }}</td>
+          <td>{{ sale.class }}</td>
+          <td>{{ sale.audi }}</td>
+          <td>{{ sale.jaguar }}</td>
+          <td>{{ sale.landRover }}</td>
+          <td>{{ sale.renault }}</td>
+        </tr>
+      </tbody>
+    </table>
+  
+    <h2>Salesman Previous Year’s Overall Sales Figures</h2>
+    <table class="sales-table">
+      <thead>
+        <tr>
+          <th>Sr.</th>
+          <th>Salesman</th>
+          <th>Last Year Total Sale Amount</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let sales of previousYearSales; let i = index">
+          <td>{{ i + 1 }}</td>
+          <td>{{ sales.salesman }}</td>
+          <td>{{ sales.lastYearTotalSale | currency }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

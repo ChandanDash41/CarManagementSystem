@@ -1,0 +1,29 @@
+.container {
+    width: 90%;
+    margin: auto;
+    font-family: Arial, sans-serif;
+  }
+  
+  h2 {
+    background: #f4f4f4;
+    padding: 10px;
+    text-align: left;
+  }
+  
+  .sales-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+  }
+  
+  .sales-table th, .sales-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+  }
+  
+  .sales-table th {
+    background-color: #333;
+    color: white;
+  }
+  

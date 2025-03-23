@@ -1,0 +1,128 @@
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.add-new-container {
+  text-align: right;
+  margin-bottom: 20px;
+}
+
+.add-new-container button {
+  padding: 10px 20px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.add-new-container button:hover {
+  background-color: #218838;
+}
+
+.search-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.search-container input {
+  width: 60%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.search-container button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.search-container button:hover {
+  background-color: #0056b3;
+}
+
+.sort-container {
+  margin-bottom: 20px;
+}
+
+.sort-container label {
+  font-size: 16px;
+  margin-right: 10px;
+}
+
+.sort-container select {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.car-model-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.car-model-table th,
+.car-model-table td {
+  padding: 12px 15px;
+  text-align: left;
+  border: 1px solid #ddd;
+}
+
+.car-model-table th {
+  background-color: #f8f9fa;
+  font-weight: bold;
+}
+
+.car-model-table td {
+  background-color: #ffffff;
+}
+
+.car-thumbnail {
+  width: 100px;
+  height: auto;
+  border-radius: 5px;
+}
+
+.car-model-table td img {
+  max-width: 100%;
+  height: auto;
+}
+
+.car-model-table td span {
+  font-style: italic;
+  color: #888;
+}
+
+.car-model-table button {
+  padding: 5px 10px;
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.car-model-table button:hover {
+  background-color: #c82333;
+}

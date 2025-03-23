@@ -1,0 +1,54 @@
+<div class="container">
+  <h2>Car Model List</h2>
+
+  <div class="add-new-container">
+    <button (click)="addNewCarModel()">Add New CarModel</button>
+  </div>
+  
+  <div class="search-container">
+    <input type="text" [(ngModel)]="search" placeholder="Search by Model Name or Model Code">
+    <button (click)="searchCarModels()">Search</button>
+  </div>
+
+  <div class="sort-container">
+    <label for="sortBy">Sort By:</label>
+    <select id="sortBy" [(ngModel)]="orderBy" (change)="getCarModels()">
+      <option value="DateOfManufacturing">Date of Manufacturing (Latest First)</option>
+      <option value="SortOrder">Sort Order</option>
+    </select>
+  </div>
+
+  <table class="car-model-table">
+    <thead>
+      <tr>
+        <th>Model</th>
+        <th>Code</th>
+        <th>Brand</th>
+        <th>Class</th>
+        <th>Price</th>
+        <th>Date of Manufacturing</th>
+        <th>Active</th>
+        <th>Image</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let model of carModels">
+        <td>{{ model.modelName }}</td>
+        <td>{{ model.modelCode }}</td>
+        <td>{{ model.brand }}</td>
+        <td>{{ model.class }}</td>
+        <td>{{ model.price | currency }}</td>
+        <td>{{ model.dateOfManufacturing | date: 'yyyy-MM-dd' }}</td>
+        <td>{{ model.isActive ? 'Yes' : 'No' }}</td>
+        <td>
+          <img *ngIf="(model.images ?? []).length > 0" [src]="(model.images ?? [])[0]" alt="Car Image" class="car-thumbnail">
+          <span *ngIf="(model.images ?? []).length === 0">No Image</span>
+        </td>
+        <td>
+          <button (click)="deleteCarModel(model?.id!)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
